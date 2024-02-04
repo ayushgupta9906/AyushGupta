@@ -29,7 +29,25 @@
 
 <!-- navbar starts -->
 <header>
-        <a href="https://ayushgupta9906.github.io/AyushGupta/" class="logo"><i class="fab fa-react"></i> Ayush </a>
+<style>
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .logo i.fab.fa-react {
+    animation: rotate 2s infinite linear;
+  }
+</style>
+
+<a href="/Portfolio-Ayush-Gupta" class="logo"><i class="fab fa-react"></i> Ayush </a>
+<i class="fa fa-external-link-square" aria-hidden="true"></i>
+<div id="menu" class="fas fa-bars"></div>
+<nav class="navbar">
 
         <div id="menu" class="fas fa-bars"></div>
         <nav class="navbar">
