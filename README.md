@@ -1,10 +1,5 @@
 ## Portfolio-Website
 
-<a href="https://github.com/AyushGupta/Portfolio-Ayush-Gupta"><img src="https://sloc.xyz/github/AyushGupta/Portfolio-Ayush-Gupta" alt="LOC"/></a>
-<a href="https://github.com/AyushGupta/Portfolio-Ayush-Gupta"><img src="https://img.shields.io/github/stars/AyushGupta/Portfolio-Ayush-Gupta" alt="Stars Badge"/></a>
-<a href="https://github.com/AyushGupta/Portfolio-Ayush-Gupta/network/members"><img src="https://img.shields.io/github/forks/AyushGupta/Portfolio-Ayush-Gupta" alt="Forks Badge"/></a>
-<a href="https://github.com/AyushGupta/Portfolio-Ayush-Gupta/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/AyushGupta/Portfolio-Ayush-Gupta?color=2b9348"></a>
-
 Portfolio website build using HTML5, CSS3, JavaScript and jQuery.
 
 <h2> Website: 
@@ -20,9 +15,9 @@ Portfolio website build using HTML5, CSS3, JavaScript and jQuery.
 #### Extras : Particle.js, Typed.js, Tilt.js, Scroll Reveal, Tawkto, Font Awesome, JSON, etc.
 
 ## 📌 Sneak Peek of Main Page:
-![mockup720](./assests/images/Screenshot%20(194).png)
-![skillsmockup](./assests/images/Screenshot%20(195).png)
-![mockup720](./assests/images/Screenshot%20(197).png)
+![mockup720](./assests/images/1.png)
+![skillsmockup](./assests/images/2.png)
+![mockup720](./assests/images/3.png)
 
 <h2>📬 Contact</h2>
 
