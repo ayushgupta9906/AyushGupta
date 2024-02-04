@@ -1,0 +1,68 @@
+[ 
+    
+    
+    {
+        "id": 1,
+        "name": "E-Mail Classification ML Model",
+        "desc": "Classify emails as spam or not-spam on the basis of the message.[Naive Bayes, Numpy, Pandas and Sklearn].",
+        "image": "https://res.cloudinary.com/dkak37mek/image/upload/v1626933127/mlpr_c2stn8.jpg",
+        "links": {
+            "view": "https://quaint-bull-earrings.cyclic.app/",
+            "code": "https://github.com/ayushgupta9906/InstaFam"
+        }
+    },
+    {
+        "id": 2,
+        "name": "COVID-19 Outbreak Analysis",
+        "desc": "We all know that coronavirus is spreading on a daily basis in India. So, let's try to visualise how fast it is spreading.",
+        "image": "https://res.cloudinary.com/dkak37mek/image/upload/v1626933140/covidml_pdaxpu.png",
+        "links": {
+            "view": "https://ayushgupta9906.github.io/saewebmaster/",
+            "code": "https://github.com/ayushgupta9906/saewebmaster"
+        }
+    },
+    {
+        "id": 3,
+        "name": "TITANIC-SURVIVOUR-ANALYSIS",
+        "desc": "In this project we are going to build an artificial intelligence neural network to check whether they survived the titanic incident or not",
+        "image": "",
+        "links": {
+            "view": "https://github.com/AyushGupta/TITANIC-SURVIVOUR-ANALYSIS/blob/main/Titanic_Survivors_Analysis_By_Ayush_.ipynb",
+            "code": "https://github.com/AyushGupta/TITANIC-SURVIVOUR-ANALYSIS"
+        }
+    },
+    {
+        "id": 4,
+        "name": "Portfolio Website",
+        "desc": "Personal portfolio website. Don't need much info about it, just scroll down. You're here only!",
+        "image": "",
+        "links": {
+            "view": "https://ayushgupta9906.github.io/Portfolio-Website/",
+            "code": "https://github.com/ayushgupta9906/Portfolio-Website"
+        }
+    }
+    ,
+    {
+        "id": 5,
+        "name": "College Library Website",
+        "desc": "This is a College Library Website in which you can keep a record of all the books you have issued.© 2021 Ayush Gupta",
+        "image": "",
+        "links": {
+            "view": "https://ayushgupta9906.github.io/saewebmaster/",
+            "code": "https://github.com/ayushgupta9906/saewebmaster"
+        }
+    },
+    {
+        "id": 6,
+        "name": "Instagram Clone | React-App",
+        "desc": "Instagram clone App built with React and Redux. The objective of this project is to practising the concepts of 'React-Hooks', 'Redux-Hooks', react-router, redux-setup.",
+        "image":"",
+        "links": {
+            "view": "https://quaint-bull-earrings.cyclic.app/",
+            "code": "https://github.com/ayushgupta9906/InstaFam"
+        }
+    }
+
+    
+    
+]
