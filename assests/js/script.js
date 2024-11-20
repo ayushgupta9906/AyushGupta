@@ -52,7 +52,7 @@ function(){
 
 // <!-- typed js effect starts -->
     var typed = new Typed(".typing-text", {
-        strings: ["Mern-Stack development", "Machine Learning", "UI/UX Design", "Tech Communities"],
+        strings: ["Full-Stack development", "Machine Learning", "UI/UX Design", "Product Development"],
         loop: true,
         typeSpeed: 50,
 		backSpeed: 25,
