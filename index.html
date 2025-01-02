@@ -1,4 +1,231 @@
 <!DOCTYPE html>
+<!-- Hover Tool Button at Bottom-Right -->
+<button id="hoverButton" style="position: fixed; bottom: 20px; right: 20px; padding: 15px 25px; background-color: #007bff; color: white; border: none; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer; font-size: 16px; z-index: 9999;">
+  Activate Hover Tool
+</button>
+<script>
+  (function() {
+    const hoverStyle = document.createElement('style');
+    const hoverButton = document.getElementById('hoverButton');
+    hoverButton.style.borderRadius = '50%';
+    hoverButton.innerHTML = '<i class="fas fa-mouse-pointer"></i>';
+    hoverStyle.textContent = `
+      .hover-highlight {
+        outline: 2px solid red;
+        cursor: pointer;
+      }
+      .action-menu { 
+        position: absolute; 
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 500px;
+        max-height: 400px;
+        overflow: auto;
+        font-family: Arial, sans-serif;
+      }
+      .close-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        color: #888;
+      }
+      .action-button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .action-button:hover {
+        background-color: #45a049;
+      }
+      .code-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        overflow: auto;
+      }
+      .code-box {
+        width: 48%;
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #ddd;
+        padding: 10px;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        font-family: "Courier New", Courier, monospace;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+      .code-box pre {
+        margin: 0;
+        color: #333;
+      }
+    `;
+    document.head.appendChild(hoverStyle);
+
+    let currentElement = null;
+    let actionMenu = null;
+    let isHoverEnabled = false;
+
+    function addHoverEffect(event) {
+      if (currentElement) {
+        currentElement.classList.remove('hover-highlight');
+      }
+      currentElement = event.target;
+      currentElement.classList.add('hover-highlight');
+    }
+
+    function removeHoverEffect() {
+      if (currentElement) {
+        currentElement.classList.remove('hover-highlight');
+        currentElement = null;
+      }
+    }
+
+    function extractElementData(event) {
+      if (event.target.classList.contains('action-button') || event.target.classList.contains('close-button')) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      const element = event.target;
+      const html = element.outerHTML;
+
+      const computedStyle = window.getComputedStyle(element);
+      const css = Array.from(computedStyle).reduce((acc, property) => {
+        return `${acc}${property}: ${computedStyle.getPropertyValue(property)};\n`;
+      }, '');
+
+      const data = {
+        html: html,
+        css: css
+      };
+
+      createActionMenu(data, event.clientX, event.clientY);
+    }
+
+    function createActionMenu(data, x, y) {
+      if (actionMenu) {
+        actionMenu.remove();
+      }
+
+      actionMenu = document.createElement('div');
+      actionMenu.classList.add('action-menu');
+      actionMenu.style.top = `${y}px`;
+      actionMenu.style.left = `${x}px`;
+
+      const closeButton = document.createElement('span');
+      closeButton.textContent = 'X';
+      closeButton.classList.add('close-button');
+      closeButton.addEventListener('click', () => {
+        actionMenu.remove();
+        actionMenu = null;
+        disableExtension();
+      });
+      actionMenu.appendChild(closeButton);
+
+      const htmlButton = createActionButton('Copy HTML', () => copyToClipboard(data.html));
+      const cssButton = createActionButton('Copy CSS', () => copyToClipboard(data.css));
+      const htmlCssButton = createActionButton('Copy HTML and CSS', () => {
+        copyToClipboard(`HTML:\n${data.html}\n\nCSS:\n${data.css}`);
+      });
+
+      actionMenu.appendChild(htmlButton);
+      actionMenu.appendChild(cssButton);
+      actionMenu.appendChild(htmlCssButton);
+
+      const codeContainer = document.createElement('div');
+      codeContainer.classList.add('code-container');
+
+      const htmlBox = document.createElement('div');
+      htmlBox.classList.add('code-box');
+      htmlBox.innerHTML = `<h4>HTML</h4><pre>${escapeHtml(data.html)}</pre>`;
+      codeContainer.appendChild(htmlBox);
+
+      const cssBox = document.createElement('div');
+      cssBox.classList.add('code-box');
+      cssBox.innerHTML = `<h4>CSS</h4><pre>${escapeHtml(data.css)}</pre>`;
+      codeContainer.appendChild(cssBox);
+
+      actionMenu.appendChild(codeContainer);
+
+      document.body.appendChild(actionMenu);
+    }
+
+    function escapeHtml(unsafe) {
+      return unsafe.replace(/[&<>"']/g, function (char) {
+        return {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#039;',
+        }[char];
+      });
+    }
+
+    function createActionButton(label, onClick) {
+      const button = document.createElement('button');
+      button.textContent = label;
+      button.classList.add('action-button');
+
+      button.addEventListener('click', onClick);
+
+      return button;
+    }
+
+    function copyToClipboard(text) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+
+      alert('Copied to clipboard!');
+    }
+
+    function disableExtension() {
+      // Disable hover effects and click functionality after closing the menu
+      document.removeEventListener('mouseover', addHoverEffect);
+      document.removeEventListener('mouseout', removeHoverEffect);
+      document.removeEventListener('click', extractElementData);
+      isHoverEnabled = false;
+    }
+
+    // Toggle the extension on and off with the button click
+    document.getElementById('hoverButton').addEventListener('click', function () {
+      if (!isHoverEnabled) {
+        // Enable hover effect and click functionality
+        document.addEventListener('mouseover', addHoverEffect);
+        document.addEventListener('mouseout', removeHoverEffect);
+        document.addEventListener('click', extractElementData);
+        isHoverEnabled = true;
+      } else {
+        // Disable hover effect and click functionality
+        document.removeEventListener('mouseover', addHoverEffect);
+        document.removeEventListener('mouseout', removeHoverEffect);
+        document.removeEventListener('click', extractElementData);
+        isHoverEnabled = false;
+      }
+    });
+  })();
+</script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
