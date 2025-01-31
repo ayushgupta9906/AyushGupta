@@ -467,25 +467,3 @@ header .navbar ul li a:hover{
 }
 /* scroll top ends */
 
-.btns {
-  display: flex;
-  gap: 10px; /* Adds space between buttons */
-  flex-wrap: wrap; /* Ensures buttons wrap on smaller screens */
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 15px;
-  text-decoration: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
