@@ -13,13 +13,14 @@
   <!-- Favicon -->
   <link id='favicon' rel="shortcut icon" href="./assests/images/favicon.png" type="image/x-png">
   <title> Ayush Gupta  </title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-
-  <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
-
-
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("tKcnAF73jMw0tRWFB");
+    })();
+  </script>
+</head>
+<body oncontextmenu="return false">
 
 <button id="hoverButton" style="position: fixed; bottom: 20px; right: 20px; padding: 15px 25px; background-color: #007bff; color: white; border: none; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); cursor: pointer; font-size: 16px; z-index: 9999;">
   Activate Hover Tool
@@ -51,39 +52,6 @@
   });
 </script>
 
-
-
-
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Ayush Gupta , portfolio Ayush Gupta , Data Scientist,Web Developer, portfolio website, Ayush Gupta  website, Founder CodeIN" />
-    <meta name="description" content="Welcome to Ayush's Portfolio. Passionate Web & App Developer. Freelancer Data Scientist Machine Learning Ethusiast." />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assests/css/style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Favicon -->
-    <link id='favicon' rel="shortcut icon" href="./assests/images/favicon.png" type="image/x-png">
-    <title> Ayush Gupta  </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("tKcnAF73jMw0tRWFB");
-   })();
-</script>
-</head>
-<body oncontextmenu="return false">
-
-
 <!-- navbar starts -->
 <header>
 <style>
@@ -105,45 +73,77 @@
 <i class="fa fa-external-link-square" aria-hidden="true"></i>
 <div id="menu" class="fas fa-bars"></div>
 <nav class="navbar">
-
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#work">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#work">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 </header>
 <!-- navbar ends -->
 
-
-
-
 <!-- hero section starts -->
 <section class="home" id="home">
-    <div id="particles-js"></div>
-
-    <div class="content">
+  <div id="particles-js"></div>
+  <div class="content">
     <h3>Hi There,<br/> I'm Ayush  <span>Gupta</span></h3>
     <p>i am into <span class="typing-text"></span></p>
     <div style="display: flex; justify-content: space-between;">
       <div style="display: inline-block; margin-right: 20px;">
         <a href="./assests/Ayush_Gupta_Resume_CS.pdf" class="btn" style="display: inline-block;">
-            <span>Resume</span>
-            <i class="fas fa-arrow-circle-up"></i>
+          <span>Resume</span>
+          <i class="fas fa-arrow-circle-up"></i>
         </a>
+      </div>
     </div>
-
-    
-  
-  </div>
     <div class="socials">
-        <ul class="social-icons">
+      <ul class="social-icons">
+        <li><a class="linkedin" href="https://www.linkedin.com/in/ayush-gupta-3a93621b6/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
+        <li><a class="github" href="https://github.com/ayushgupta9906" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a class="twitter" href="https://twitter.com/LaSerX_1729" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a class="instagram" href="https://www.instagram.com/laserx_1729/"><i class="fab fa-instagram" target="_blank"></i></a></li>
+        <li><a class="gmail" href="mailto:ayush150152@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image"></div>
+    <img draggable="false" class="tilt" src="./assests/images/potrait.jpg" alt="">
+  </div>
+</section>
+<!-- hero section ends -->
+
+<!-- about section starts -->
+<section class="about" id="about">
+  <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
+  <div class="row">
+    <div class="image">
+      <img draggable="false" class="tilt" src="assests\images\Cropped_Image.png" alt="">
+    </div>
+    <div class="content">
+      <h3>I'm Ayush Gupta</h3>
+      <span class="tag">Passionate Full Stack Developer | Machine Learning Enthusiast | UI/UX Design </span>
+      <p> Engineering Undergraduate Student at Aligarh Muslim University. </p>
+      <div class="box-container">
+        <div class="box"></div>
+          <p><span> college : </span>ZAKIR HUSAIN COLLEGE OF ENGINEERING AND TECHNOLOGY , ALIGARH MUSLIM UNIVERSITY , ALIGARH</p>
+        </div>
+        <div class="box">
+          <p><span> email : </span> Ayush150152@gmail.com</p>
+          <p><span> place : </span> Noida, India </p>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div class="resumebtn">
+          <a href="./assests/Ayush_Gupta_Resume_CS.pdf" class="btn">
+            <span>Resume/CV</span>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+        <div class="resumebtn" style="margin-left: 30px;"></div>
           <li><a class="linkedin" href="https://www.linkedin.com/in/ayush-gupta-3a93621b6/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
           <li><a class="github" href="https://github.com/ayushgupta9906" target="_blank"><i class="fab fa-github"></i></a></li>
           <li><a class="twitter" href="https://twitter.com/LaSerX_1729" target="_blank"><i class="fab fa-twitter"></i></a></li>
@@ -299,7 +299,24 @@
         <div class="desc">
           <p>Lenskart Stores providing free eye test near you</p>
           <div class="btns">
-            <a href="Stores providing free eye test near you" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            <a href="https://www.lenskart.com/eyetestnear" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box tilt">
+      <img draggable="false" src="assests\images\Screenshot 2025-02-25 173040.png" alt="" />
+      <div class="content">
+        <div class="tag">
+        <h3>LaserX Acad</h3>
+        </div>
+        <div class="desc">
+          <p>JEE/NEET Prep
+            0->Hero
+          </p>
+          <div class="btns">
+            <a href="https://laserxacad.vercel.app/" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            <a href="https://github.com/ayushgupta9906/LaserX-Acad" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
           </div>
         </div>
       </div>
